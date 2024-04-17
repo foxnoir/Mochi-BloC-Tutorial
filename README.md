@@ -10,11 +10,11 @@
 <br />
 <div align="center">
   <img src="images/logo.png" alt="Logo" width="80" height="80">
-  <h1 align="center">Basic (Really basic) Workout tracker</h1>
+  <h1 align="center">BloC, clean coding and tdd tutorial</h1>
 
 <!-- PROJECT desc -->
   <p align="left">
-My favorite statemangment library is MobX and since I've never built a project with Bloc, I'm making up for it with this. The project is based on the Udemy Tutorial  <a href="https://www.udemy.com/course/flutter-bloc-tdd-clean-architecture/?couponCode=JUST4U02223"><strong>BLoC Udemy Course »</strong></a>
+My favorite statemangment library is MobX and since I've never built a project with BloC, I'm making up for it with this. The project is based on the Udemy Tutorial  <a href="https://www.udemy.com/course/flutter-bloc-tdd-clean-architecture/?couponCode=JUST4U02223"><strong>BLoC Udemy Course »</strong></a>
   </p>
 
   <!-- PROJECT link -->
@@ -147,14 +147,9 @@ https://user-images.githubusercontent.com/95978076/200083313-cf531a3b-6c2c-4495-
 
 ### Libraries And Tools
 
-<!-- - [UserModelentification](https://firebase.google.com/docs/auth)
-- [Cloud FirebaseFirestore](https://firebase.google.com/docs/FirebaseFirestore)
-- [Cloud Storage Firebase](https://firebase.google.com/docs/storage)
-- [Routing](https://api.flutter.dev/flutter/widgets/RouteObserver-class.html)
-- [Theme](https://docs.flutter.dev/cookbook/design/themes) (basic)
-- [Provider](https://github.com/rrousselGit/provider) (state management)
-- [Validation](https://github.com/dart-league/validators)
-- [Dark Theme Support](https://medium.flutterdevs.com/implement-dark-mode-in-flutter-using-provider-158925112bf9) (basic) -->
+- [Dartz](https://pub.dev/packages/dartz)
+- [Equatable](https://pub.dev/packages/equatable)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
