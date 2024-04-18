@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+// only used in domain layer
 class User extends Equatable {
   const User({
     required this.id,
