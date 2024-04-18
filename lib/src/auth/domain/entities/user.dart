@@ -5,13 +5,20 @@ import 'package:equatable/equatable.dart';
 class User extends Equatable {
   const User({
     required this.id,
-    required this.createsAt,
+    required this.createdAt,
     required this.name,
     required this.avatar,
   });
 
+  // makes it easier to test
+  const User.empty()
+      : id = 1,
+        createdAt = 'empty.createdAt',
+        name = 'empty.name',
+        avatar = 'empty.avatar';
+
   final int id;
-  final String createsAt;
+  final String createdAt;
   final String name;
   final String avatar;
 

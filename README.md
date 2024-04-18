@@ -150,6 +150,11 @@ https://user-images.githubusercontent.com/95978076/200083313-cf531a3b-6c2c-4495-
 - [Dartz](https://pub.dev/packages/dartz)
 - [Equatable](https://pub.dev/packages/equatable)
 - [GetIt](https://pub.dev/packages/get_it)
+- [Mocktail](https://pub.dev/packages/mocktail)
+
+
+
+
 
 
 
