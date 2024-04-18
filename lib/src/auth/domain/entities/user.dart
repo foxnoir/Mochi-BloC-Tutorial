@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 // only used in domain layer
+// what we get from server
 class User extends Equatable {
   const User({
     required this.id,
