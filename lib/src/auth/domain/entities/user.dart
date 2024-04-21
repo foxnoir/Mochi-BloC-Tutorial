@@ -12,12 +12,12 @@ class User extends Equatable {
 
   // makes it easier to test
   const User.empty()
-      : id = 1,
+      : id = 'empty.id',
         createdAt = 'empty.createdAt',
         name = 'empty.name',
         avatar = 'empty.avatar';
 
-  final int id;
+  final String id;
   final String createdAt;
   final String name;
   final String avatar;
