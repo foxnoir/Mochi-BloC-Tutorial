@@ -1,3 +1,13 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mochi/core/utils/type_defs.dart';
+import 'package:mochi/src/auth/data/models/user_model.dart';
+import 'package:mochi/src/auth/domain/entities/user.dart';
+
+import '../../../../fixtures/fixture_reader.dart';
+
 // Unit Test file for user_model.dart// What does this class depend on?
 // How can we create a fake version of a dependenccy?
 // How do we control what the dependencies does?
@@ -9,21 +19,36 @@
 // How can we create a fake version of a dependenccy?
 // How do we control what the dependencies does?
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mochi/src/auth/data/models/user_model.dart';
-import 'package:mochi/src/auth/domain/entities/user.dart';
-
 void main() {
+  final UserModel tModel = UserModel.empty();
+
 //always the first thing you want to test
   test('should be a subclass of [User] entity', () {
     // arrange
-    final tModel = UserModel.empty();
 
     // Act
-// NO ACT cause there is no function to call/test
+    // NO ACT cause there is no function to call/test
 
-// Assert
-// we just make that the [tModle] is an instance of [User]
+    // Assert
+    // we just make that the [tModle] is an instance of [User]
     expect(tModel, isA<User>());
+  });
+
+  final tJson = fixture('user.json');
+  final tMap = jsonDecode(tJson) as DataMap;
+
+  group('fromMap', () {
+    test('should return a [UserModel] with the right data', () {
+      // Arrange
+      // akready done
+
+      // Act
+      final result = UserModel.fromMap(tMap);
+
+      // print(tModel);
+
+      // Assert
+      expect(result, equals(tModel));
+    });
   });
 }

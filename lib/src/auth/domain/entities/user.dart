@@ -12,10 +12,12 @@ class User extends Equatable {
 
   // makes it easier to test
   const User.empty()
-      : id = 'empty.id',
-        createdAt = 'empty.createdAt',
-        name = 'empty.name',
-        avatar = 'empty.avatar';
+      : this(
+          id: '1',
+          createdAt: '_empty.createdAt',
+          name: '_empty.name',
+          avatar: '_empty.avatar',
+        );
 
   final String id;
   final String createdAt;
@@ -23,5 +25,5 @@ class User extends Equatable {
   final String avatar;
 
   @override
-  List<Object?> get props => throw [id];
+  List<Object?> get props => [id];
 }
