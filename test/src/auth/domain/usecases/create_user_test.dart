@@ -9,7 +9,7 @@ import 'package:mochi/src/auth/domain/repositories/auth_repo.dart';
 import 'package:mochi/src/auth/domain/usecases/create_user.dart';
 import 'package:mocktail/mocktail.dart';
 
-class MockAuthRepo extends Mock implements AuthRepo {}
+import 'auth_repo.mock.dart';
 
 void main() {
   late CreateUser useCase;
@@ -26,6 +26,7 @@ void main() {
 
   test('should call [AuthRepo.createUser]', () async {
     // Arrange
+    // STUB
     // createUSer is a future, so we have to use when().thenAnswer() not when().thenReturn()
     // with thenAnswer we wait for the fuction to complete
     when(
