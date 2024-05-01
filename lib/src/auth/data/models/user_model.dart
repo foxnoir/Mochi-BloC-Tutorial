@@ -1,9 +1,10 @@
 // extends the user entety
 // entity is the bluprint
 // model is the implementation/ extension of the blueprint
-
+//
+//
+// actual implementation of the user entity
 import 'dart:convert';
-
 import 'package:mochi/core/utils/type_defs.dart';
 import 'package:mochi/src/auth/domain/entities/user.dart';
 
@@ -18,9 +19,9 @@ class UserModel extends User {
   const UserModel.empty()
       : this(
           id: '1',
+          avatar: '_empty.avatar',
           createdAt: '_empty.createdAt',
           name: '_empty.name',
-          avatar: '_empty.avatar',
         );
 
   factory UserModel.fromJson(String source) =>
@@ -28,15 +29,15 @@ class UserModel extends User {
 
   UserModel.fromMap(DataMap map)
       : this(
-          avatar: map['avatar'] as String,
           id: map['id'] as String,
+          avatar: map['avatar'] as String,
           createdAt: map['createdAt'] as String,
           name: map['name'] as String,
         );
 
   UserModel copyWith({
-    String? avatar,
     String? id,
+    String? avatar,
     String? createdAt,
     String? name,
   }) {

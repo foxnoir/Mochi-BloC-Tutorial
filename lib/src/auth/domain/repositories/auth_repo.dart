@@ -2,6 +2,8 @@
 import 'package:mochi/core/utils/type_defs.dart';
 import 'package:mochi/src/auth/domain/entities/user.dart';
 
+// defines params, func signature and return types of user
+
 abstract class AuthRepo {
   const AuthRepo();
 

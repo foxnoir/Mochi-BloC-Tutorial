@@ -2,6 +2,9 @@ import 'package:equatable/equatable.dart';
 
 // only used in domain layer
 // what we get from server
+//
+//
+// generic entity
 class User extends Equatable {
   const User({
     required this.id,
@@ -25,5 +28,5 @@ class User extends Equatable {
   final String avatar;
 
   @override
-  List<Object?> get props => [id];
+  List<Object?> get props => [id, name, avatar];
 }
