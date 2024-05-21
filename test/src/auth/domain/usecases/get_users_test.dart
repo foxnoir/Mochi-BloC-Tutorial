@@ -1,13 +1,12 @@
 // What does this class depend on?
-// How can we create a fake version of a dependenccy?
+// How can we create a fake version of a dependency?
 // How do we control what the dependencies does?
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mochi/core/errrors/failure.dart';
+import 'package:mochi/core/errors/failure.dart';
 import 'package:mochi/src/auth/domain/entities/user.dart';
 import 'package:mochi/src/auth/domain/repositories/auth_repo.dart';
-import 'package:mochi/src/auth/domain/usecases/create_user.dart';
 import 'package:mochi/src/auth/domain/usecases/get_users.dart';
 import 'package:mocktail/mocktail.dart';
 
@@ -18,7 +17,7 @@ void main() {
   late AuthRepo repository;
 
 // gets called before each test
-// setUpAll woukld be called only once
+// setUpAll would be called only once
   setUp(() {
     repository = MockAuthRepo();
     useCase = GetUsers(repository);
@@ -26,7 +25,7 @@ void main() {
 
   const List<User> tResponse = [User.empty()];
 
-  test('should call [AuthRepo.getUsers] and reurn [List<User>]', () async {
+  test('should call [AuthRepo.getUsers] and return [List<User>]', () async {
     // Arrange
     when(
       () => repository.getUsers(),

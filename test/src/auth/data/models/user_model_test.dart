@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mochi/core/utils/type_defs.dart';
@@ -9,14 +8,14 @@ import 'package:mochi/src/auth/domain/entities/user.dart';
 import '../../../../fixtures/fixture_reader.dart';
 
 // Unit Test file for user_model.dart// What does this class depend on?
-// How can we create a fake version of a dependenccy?
+// How can we create a fake version of a dependency?
 // How do we control what the dependencies does?
 //
 //
 // usermodel.dart doesn't depend on anything
 
 // What does this class depend on?
-// How can we create a fake version of a dependenccy?
+// How can we create a fake version of a dependency?
 // How do we control what the dependencies does?
 
 void main() {
@@ -30,7 +29,7 @@ void main() {
     // NO ACT cause there is no function to call/test
 
     // Assert
-    // we just make that the [tModle] is an instance of [User]
+    // we just make that the [tModel] is an instance of [User]
     expect(tModel, isA<User>());
   });
 
@@ -40,7 +39,7 @@ void main() {
   group('fromMap', () {
     test('should return a [UserModel] with the right data', () {
       // Arrange
-      // akready done
+      // already done
 
       // Act
       final result = UserModel.fromMap(tMap);

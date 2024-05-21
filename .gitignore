@@ -44,3 +44,5 @@ app.*.map.json
 
 Icon
 
+# FVM Version Cache
+.fvm/
