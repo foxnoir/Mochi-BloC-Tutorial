@@ -5,6 +5,8 @@ import 'package:injectable/injectable.dart';
 import 'package:mochi/core/di/di.dart';
 import 'package:mochi/core/utils/logger.dart';
 
+//test test
+
 Future<void> main() async {
   await runZonedGuarded(() async {
     WidgetsFlutterBinding.ensureInitialized();
