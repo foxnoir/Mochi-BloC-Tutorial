@@ -19,7 +19,7 @@ import '../../../../fixtures/fixture_reader.dart';
 // How do we control what the dependencies does?
 
 void main() {
-  final UserModel tModel = UserModel.empty();
+  const tModel = UserModel.empty();
 
 //always the first thing you want to test
   test('should be a subclass of [User] entity', () {
@@ -73,12 +73,14 @@ void main() {
     test('should return a [JSON] with the right data', () {
       // Act
       final result = tModel.toJson();
-      final tJson = jsonEncode({
-        'id': '1',
-        'avatar': '_empty.avatar',
-        'createdAt': '_empty.createdAt',
-        'name': '_empty.name'
-      });
+      final tJson = jsonEncode(
+        {
+          'id': '1',
+          'avatar': '_empty.avatar',
+          'createdAt': '_empty.createdAt',
+          'name': '_empty.name',
+        },
+      );
 
       // Assert
       expect(result, equals(tJson));

@@ -19,11 +19,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^3.0.2
+  flutter_lints: ^4.0.0
   build_runner: ^2.4.9
   injectable_generator: ^2.6.1
   drift_dev: ^2.16.0
   mocktail: ^1.0.3
+  very_good_analysis: ^5.1.0
 
 flutter:
   uses-material-design: true

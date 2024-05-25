@@ -4,7 +4,6 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mochi/core/errors/failure.dart';
 import 'package:mochi/src/auth/domain/repositories/auth_repo.dart';
 import 'package:mochi/src/auth/domain/usecases/create_user.dart';
 import 'package:mocktail/mocktail.dart';
@@ -27,17 +26,19 @@ void main() {
   test('should call [AuthRepo.createUser]', () async {
     // Arrange
     // STUB
-    // createUSer is a future, so we have to use when().thenAnswer() not when().thenReturn()
+    // createUSer is a future, so we have to use when().thenAnswer()
+    // not when().thenReturn()
     // with thenAnswer we wait for the function to complete
     when(
       () => repository.createUser(
-          createdAt: any(named: 'createdAt'),
-          name: any(named: 'name'),
-          avatar: any(named: 'avatar')),
+        createdAt: any(named: 'createdAt'),
+        name: any(named: 'name'),
+        avatar: any(named: 'avatar'),
+      ),
     ).thenAnswer((_) async => const Right(null));
 
     // Act
-    final Either<Failure, dynamic> result = await useCase(params);
+    final result = await useCase(params);
 
     // Assert
     // expect(result, matcher)
@@ -46,9 +47,10 @@ void main() {
     // to verify that the function was called
     verify(
       () => repository.createUser(
-          createdAt: params.createdAt,
-          name: params.name,
-          avatar: params.avatar),
+        createdAt: params.createdAt,
+        name: params.name,
+        avatar: params.avatar,
+      ),
     ).called(1);
 
     verifyNoMoreInteractions(repository);

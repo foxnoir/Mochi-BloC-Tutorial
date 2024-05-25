@@ -42,10 +42,11 @@ class UserModel extends User {
     String? name,
   }) {
     return UserModel(
-        avatar: avatar ?? this.avatar,
-        id: id ?? this.id,
-        createdAt: createdAt ?? this.createdAt,
-        name: name ?? this.name);
+      avatar: avatar ?? this.avatar,
+      id: id ?? this.id,
+      createdAt: createdAt ?? this.createdAt,
+      name: name ?? this.name,
+    );
   }
 
   DataMap toMap() => {

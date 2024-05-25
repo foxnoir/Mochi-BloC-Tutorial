@@ -1,6 +1,7 @@
 // we want to check if a failure is the same as an other failure
 // that's why we use equatable
 import 'package:equatable/equatable.dart';
+import 'package:mochi/core/errors/exceptions.dart';
 
 abstract class Failure extends Equatable {
   const Failure({required this.message, required this.statusCode});
@@ -14,4 +15,7 @@ abstract class Failure extends Equatable {
 
 class ApiFailure extends Failure {
   const ApiFailure({required super.message, required super.statusCode});
+
+  ApiFailure.fromException(ApiException exception)
+      : this(message: exception.message, statusCode: exception.statusCode);
 }

@@ -4,7 +4,6 @@
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mochi/core/errors/failure.dart';
 import 'package:mochi/src/auth/domain/entities/user.dart';
 import 'package:mochi/src/auth/domain/repositories/auth_repo.dart';
 import 'package:mochi/src/auth/domain/usecases/get_users.dart';
@@ -23,7 +22,7 @@ void main() {
     useCase = GetUsers(repository);
   });
 
-  const List<User> tResponse = [User.empty()];
+  const tResponse = <User>[User.empty()];
 
   test('should call [AuthRepo.getUsers] and return [List<User>]', () async {
     // Arrange
@@ -32,7 +31,7 @@ void main() {
     ).thenAnswer((_) async => const Right(tResponse));
 
     // Act
-    final Either<Failure, List<User>> result = await useCase();
+    final result = await useCase();
 
     // Assert
     // expect(result, matcher)

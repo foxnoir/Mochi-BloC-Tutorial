@@ -6,11 +6,10 @@ import 'package:flutter/foundation.dart';
 // https://logging.apache.org/log4j/2.x/manual/customloglevels.html
 
 class Logger {
-  late int logLevel;
-
   Logger() {
     logLevel = kDebugMode ? 100 : 700;
   }
+  late int logLevel;
 
   // fatal
   void f(String message, Object error, StackTrace? stack) {
@@ -37,7 +36,7 @@ class Logger {
     _log(message, 500);
   }
 
-  void _log(message, int level, [Object? error, StackTrace? stack]) {
+  void _log(String message, int level, [Object? error, StackTrace? stack]) {
     if (level >= logLevel) {
       log(message, level: level, error: error, stackTrace: stack);
     }

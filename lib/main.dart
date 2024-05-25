@@ -28,13 +28,12 @@ Future<void> _loadApp() async {
 }
 
 class Mochi extends StatelessWidget with WidgetsBindingObserver {
-  // <instance> is the single instance that is being create with the _internal named constructor
-  // the factory method returns this single instance
+  factory Mochi() => instance;
+  // <instance> is the single instance that is being create with the _internal
+  // named constructor the factory method returns this single instance
   const Mochi._internal();
 
   static const Mochi instance = Mochi._internal();
-
-  factory Mochi() => instance;
 
   @override
   Widget build(BuildContext context) {
