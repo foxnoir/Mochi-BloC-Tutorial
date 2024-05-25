@@ -4,6 +4,8 @@ import 'package:mochi/core/errors/exceptions.dart';
 import 'package:mochi/core/errors/failure.dart';
 import 'package:mochi/src/auth/data/auth_repo_implementation.dart';
 import 'package:mochi/src/auth/data/data_sources/auth_remote_data_source.dart';
+import 'package:mochi/src/auth/data/models/user_model.dart';
+import 'package:mochi/src/auth/domain/entities/user.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockAuthRemoteDataSource extends Mock implements AuthRemoteDataSource {}
@@ -89,6 +91,28 @@ void main() {
           name: name,
           avatar: avatar,
         ),
+      ).called(1);
+
+      verifyNoMoreInteractions(remoteDataSource);
+    });
+  });
+
+  group('getUsers', () {
+    test(
+        'should call [RemoteDataSource.getUsers] and return [List<User>] '
+        'when call to remote source is successful', () async {
+      const expecteedUsers = [UserModel.empty(), UserModel.empty()];
+      when(
+        () => remoteDataSource.getUsers(),
+      ).thenAnswer((_) async => expecteedUsers);
+
+      final result = await repoImpl.getUsers();
+
+      // lists are difficult to equate
+      // they don't have value equality
+      expect(result, isA<Right<Failure, List<User>>>());
+      verify(
+        () => remoteDataSource.getUsers(),
       ).called(1);
 
       verifyNoMoreInteractions(remoteDataSource);

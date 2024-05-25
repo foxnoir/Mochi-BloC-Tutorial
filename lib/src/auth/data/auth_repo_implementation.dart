@@ -25,13 +25,17 @@ class AuthRepoImplementation implements AuthRepo {
   final AuthRemoteDataSource _remoteDataSource;
 
   @override
-  ResultVoid createUser(
-      {required String createdAt,
-      required String name,
-      required String avatar}) async {
+  ResultVoid createUser({
+    required String createdAt,
+    required String name,
+    required String avatar,
+  }) async {
     try {
       await _remoteDataSource.createUser(
-          createdAt: createdAt, name: name, avatar: avatar);
+        createdAt: createdAt,
+        name: name,
+        avatar: avatar,
+      );
       return const Right(null);
     } on ApiException catch (e) {
       return Left(ApiFailure.fromException(e));
@@ -39,8 +43,12 @@ class AuthRepoImplementation implements AuthRepo {
   }
 
   @override
-  ResultFuture<List<User>> getUsers() {
-    // TODO: implement getUsers
-    throw UnimplementedError();
+  ResultFuture<List<User>> getUsers() async {
+    try {
+      final result = await _remoteDataSource.getUsers();
+      return Right(result);
+    } on ApiException catch (e) {
+      return Left(ApiFailure.fromException(e));
+    }
   }
 }
