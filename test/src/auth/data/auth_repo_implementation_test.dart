@@ -57,7 +57,7 @@ void main() {
     });
 
     test(
-        'should return a [ServerFailure] when the call to the remote source is '
+        'should return a [ApiFailure] when the call to the remote source is '
         'unsuccessful', () async {
       when(
         () => remoteDataSource.createUser(
@@ -101,7 +101,7 @@ void main() {
     test(
         'should call [RemoteDataSource.getUsers] and return [List<User>] '
         'when call to remote source is successful', () async {
-      const expecteedUsers = [UserModel.empty(), UserModel.empty()];
+      const expecteedUsers = [UserModel.empty()];
       when(
         () => remoteDataSource.getUsers(),
       ).thenAnswer((_) async => expecteedUsers);
@@ -111,6 +111,34 @@ void main() {
       // lists are difficult to equate
       // they don't have value equality
       expect(result, isA<Right<Failure, List<User>>>());
+      verify(
+        () => remoteDataSource.getUsers(),
+      ).called(1);
+
+      verifyNoMoreInteractions(remoteDataSource);
+    });
+
+    test(
+        'should return a [ApiFailure] when the call to the remote source is '
+        'unsuccessful', () async {
+      when(
+        () => remoteDataSource.getUsers(),
+      ).thenThrow(tException);
+
+      final result = await repoImpl.getUsers();
+
+      expect(
+        result,
+        equals(
+          Left<Failure, void>(
+            ApiFailure(
+              message: tException.message,
+              statusCode: tException.statusCode,
+            ),
+          ),
+        ),
+      );
+
       verify(
         () => remoteDataSource.getUsers(),
       ).called(1);
