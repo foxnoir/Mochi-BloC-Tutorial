@@ -110,7 +110,7 @@ void main() {
 
       // lists are difficult to equate
       // they don't have value equality
-      expect(result, isA<Right<Failure, List<UserModel>>>());
+      expect(result, isA<Right<Failure, List<User>>>());
       verify(
         () => remoteDataSource.getUsers(),
       ).called(1);
