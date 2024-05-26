@@ -4,6 +4,7 @@ import 'package:mochi/core/utils/type_defs.dart';
 // 'call' makes the class callable
 abstract class UseCaseWithParams<Type, Params> {
   const UseCaseWithParams();
+  // call makes it a callable object
   ResultFuture<Type> call(Params params);
 }
 
