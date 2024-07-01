@@ -11,7 +11,7 @@ import 'package:mochi/core/utils/consts.dart';
 import 'package:mochi/src/auth/data/models/user_model.dart';
 
 const kCreateUserEndpoint = '/users';
-const kGetUserEndpoint = '/users';
+const kGetUserEndpoint = '/user';
 
 abstract class AuthRemoteDataSource {
   Future<void> createUser({
