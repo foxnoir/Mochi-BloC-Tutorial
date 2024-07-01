@@ -1,3 +1,4 @@
+// ignore_for_file: lines_longer_than_80_chars
 // // What does this class depend on?
 // // How can we create a fake version of a dependency?
 // // How do we control what the dependencies does?

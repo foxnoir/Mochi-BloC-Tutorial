@@ -2,9 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mochi/core/errors/exceptions.dart';
 import 'package:mochi/core/errors/failure.dart';
-import 'package:mochi/src/auth/data/repositories/auth_repo_implementation.dart';
 import 'package:mochi/src/auth/data/data_sources/auth_remote_data_source.dart';
 import 'package:mochi/src/auth/data/models/user_model.dart';
+import 'package:mochi/src/auth/data/repositories/auth_repo_implementation.dart';
 import 'package:mochi/src/auth/domain/entities/user.dart';
 import 'package:mocktail/mocktail.dart';
 
